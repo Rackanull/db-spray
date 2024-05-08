@@ -19,7 +19,7 @@ if [[ $s ]] && [ $s -eq $s 2>/dev/null ] && [ "$s" != "" ]; then
 		for u in $(cat users.txt);do
 		    if [ "$db" == "1" ]; then
 		    	echo $u:$p
-				mssqlclient.py $u:$p@$1 2>/dev/null
+				impacket-mssqlclient $u:$p@$1 2>/dev/null
 				sleep $s
 			elif [ "$db" == "2" ]; then
 				echo $u:$p
